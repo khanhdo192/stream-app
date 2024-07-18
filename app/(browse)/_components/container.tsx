@@ -26,4 +26,4 @@ const Container = ({ children }: ContainerProps) => {
   );
 };
 
-export default Container;
+export { Container };

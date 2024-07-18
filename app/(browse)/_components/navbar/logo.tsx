@@ -24,4 +24,4 @@ const Logo = () => {
   );
 };
 
-export default Logo;
+export { Logo };
