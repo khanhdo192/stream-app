@@ -1,6 +1,6 @@
-import Logo from "./logo";
-import Search from "./search";
-import Action from "./action";
+import { Logo } from "./logo";
+import { Search } from "./search";
+import { Action } from "./action";
 
 const Navbar = () => {
   return (
@@ -12,4 +12,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export { Navbar };

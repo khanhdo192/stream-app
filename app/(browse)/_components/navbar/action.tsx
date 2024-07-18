@@ -36,4 +36,4 @@ const Action = async () => {
   );
 };
 
-export default Action;
+export { Action };
