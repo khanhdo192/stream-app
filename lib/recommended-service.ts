@@ -24,9 +24,18 @@ export const getRecommended = async () => {
           },
           {
             NOT: {
-              following: {
+              followedBy: {
                 some: {
                   followerId: userId,
+                },
+              },
+            },
+          },
+          {
+            NOT: {
+              blocking: {
+                some: {
+                  blockedId: userId,
                 },
               },
             },
@@ -44,8 +53,6 @@ export const getRecommended = async () => {
       },
     });
   }
-
-  console.log("users", users);
 
   return users;
 };
