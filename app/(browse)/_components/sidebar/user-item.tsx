@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Skeleton } from "@/components/ui/skeleton";
 import { UserAvatar } from "@/components/user-avatar";
 import { cn } from "@/lib/utils";
-import { useSidebar } from "@/store/user-sidebar";
+import { useSidebar } from "@/store/use-sidebar";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
