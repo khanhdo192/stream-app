@@ -36,7 +36,7 @@ export const Header = ({
   return (
     <div className="flex flex-col lg:flex-row gap-y-4 lg:gap-y-0 items-start justify-between px-4">
       <div className="flex items-center gap-x-3">
-        <UserAvatar imageUrl={imageUrl} username={hostName} size="lg" isLive={true} showBadge />
+        <UserAvatar imageUrl={imageUrl} username={hostName} size="lg" isLive={isLive} showBadge />
         <div className="space-y-1">
           <div className="flex items-center gap-x-2">
             <h2 className="text-lg font-semibold">{hostName}</h2>

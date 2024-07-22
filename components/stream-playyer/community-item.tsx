@@ -50,6 +50,7 @@ export const CommunityItem = ({
           <Button
             className="h-auto w-auto p-1 opacity-0 group-hover:opacity-100 transition"
             variant="ghost"
+            onClick={handleBlock}
           >
             <MinusCircle className="h-4 w-4 text-muted-foreground" />
           </Button>

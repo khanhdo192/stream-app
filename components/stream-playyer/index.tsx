@@ -10,9 +10,15 @@ import { Chat, ChatSkeleton } from "./chat";
 import { ChatToggle } from "./chat-toggle";
 import { Header, HeaderSkeleton } from "./header";
 import { InfoCard } from "./info-card";
+import { AboutCard } from "./about-card";
 
 interface StreamPlayerProps {
-  user: User & { stream: Stream | null };
+  user: User & {
+    stream: Stream | null;
+    _count: {
+      followedBy: number;
+    };
+  };
   stream: Stream;
   isFollowing: boolean;
 }
@@ -37,7 +43,7 @@ export const StreamPlayer = ({ user, stream, isFollowing }: StreamPlayerProps) =
         serverUrl={process.env.NEXT_PUBLIC_LIVEKIT_WS_URL}
         className={cn(
           "grid grid-cols-1 lg:gap-y-0 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-6 h-full",
-          collapsed && "lg:grid-cols-2 xl:grid-cols-2 2cl:grid-cols-2"
+          collapsed && "lg:grid-cols-2 xl:grid-cols-2 2xl:grid-cols-2"
         )}
       >
         <div className="space-y-4 col-span-1 lg:col-span-2 xl:col-span-2 2xl:col-span-5 lg:overflow-y-auto hidden-scrollbar pb-10">
@@ -55,6 +61,13 @@ export const StreamPlayer = ({ user, stream, isFollowing }: StreamPlayerProps) =
             viewerIdentity={identity}
             name={stream.name}
             thumbnailUrl={stream.thumbnailUrl}
+          />
+          <AboutCard
+            hostIdentity={user.id}
+            viewerIdentity={identity}
+            hostName={user.username}
+            bio={user.bio}
+            followedByCount={user._count.followedBy}
           />
         </div>
         <div className={cn("col-span-1", collapsed && "hidden")}>

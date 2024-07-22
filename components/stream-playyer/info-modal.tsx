@@ -100,7 +100,7 @@ export const InfoModal = ({ initialName, initialThumbnailUrl }: InfoModalProps) 
                     </Button>
                   </Hint>
                 </div>
-                <Image src={thumbnailUrl} alt="Thumbnail" fill className="object-fill" />
+                <Image src={thumbnailUrl} alt="Thumbnail" fill className="object-cover" />
               </div>
             ) : (
               <div className="rounded-xl border outline-dashed outline-muted">
