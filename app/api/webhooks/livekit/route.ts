@@ -36,4 +36,6 @@ export async function POST(req: Request) {
       },
     });
   }
+
+  return new Response("Event processed", { status: 200 });
 }
